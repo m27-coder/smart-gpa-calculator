@@ -1,0 +1,18 @@
+[global]
+suppressDeprecationWarnings = true
+
+[server]
+headless = true
+enableCORS = false
+enableXsrfProtection = true
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+base = "dark"
+primaryColor = "#7c3aed"
+backgroundColor = "#0b0a1a"
+secondaryBackgroundColor = "#0d0b1f"
+textColor = "#f0eeff"
+font = "sans serif"
