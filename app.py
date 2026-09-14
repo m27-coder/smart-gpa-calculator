@@ -319,6 +319,16 @@ div[data-testid="metric-container"] [data-testid="stMetricValue"] {
     transition: background 0.2s;
 }
 .footer-badge:hover { background: rgba(139,92,246,0.22); }
+.footer-team-credit {
+    font-size: 0.82rem; font-weight: 700; color: #c4b5fd;
+    letter-spacing: 0.03em; margin-bottom: 8px;
+}
+.footer-team-credit strong { color: #a78bfa; }
+.footer-members {
+    font-size: 0.72rem; color: #5a4f80;
+    letter-spacing: 0.02em; margin-bottom: 14px;
+    line-height: 1.8;
+}
 
 /* ── Demo case buttons ── */
 .demo-btn-wrap { margin: 4px 0 10px; }
@@ -463,6 +473,37 @@ h1, h2, h3, h4, h5 { color: #f0eeff !important; }
     display: inline-block;
 }
 .open-creator strong { color: #a78bfa; font-weight: 700; }
+
+/* ── Team WebForge block (opening page) ── */
+.open-team-block {
+    margin-top: 4px;
+    margin-bottom: 28px;
+    padding: 14px 20px;
+    background: rgba(139,92,246,0.06);
+    border: 1px solid rgba(139,92,246,0.18);
+    border-radius: 16px;
+    text-align: center;
+}
+.open-team-label {
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: #9d8ec4; margin-bottom: 10px;
+}
+.open-team-members {
+    display: flex; flex-wrap: wrap;
+    justify-content: center; gap: 4px 14px;
+}
+.open-member {
+    font-size: 0.8rem; font-weight: 500; color: #c4b5fd;
+    white-space: nowrap;
+}
+.member-id {
+    font-size: 0.72rem; font-weight: 400; color: #5a4f80;
+}
+@media (max-width: 480px) {
+    .open-team-members { flex-direction: column; align-items: center; gap: 6px; }
+    .open-member { white-space: normal; }
+}
 
 /* ══════════════════════════════════════════════════════════════════════
    ANIMATIONS  (theme-agnostic — motion only, no colour overrides)
@@ -703,6 +744,13 @@ if not _dark:
     .open-creator { background: rgba(109,40,217,0.05) !important; color: #5a4f80 !important; }
     .open-creator strong { color: #5b21b6 !important; }
     .open-divider { background: linear-gradient(90deg,transparent,rgba(109,40,217,0.22),transparent) !important; }
+    .open-team-block { background: rgba(109,40,217,0.05) !important; border-color: rgba(109,40,217,0.15) !important; }
+    .open-team-label { color: #5a4f80 !important; }
+    .open-member { color: #3d2f7e !important; }
+    .member-id { color: #8b7db5 !important; }
+    .footer-team-credit { color: #3d2f7e !important; }
+    .footer-team-credit strong { color: #5b21b6 !important; }
+    .footer-members { color: #7060a0 !important; }
 
     /* Footer */
     .footer-title { color: #3d2f7e !important; }
@@ -986,7 +1034,15 @@ if st.session_state.page == "start":
             <div class='open-chip'>📈 Visual Charts</div>
             <div class='open-chip'>🌐 Public Web Access</div>
         </div>
-        <div class='open-creator'>Created by <strong>Mukhammadzokhir Nasriddinov</strong></div>
+        <div class='open-team-block'>
+            <div class='open-team-label'>Created by Team WebForge</div>
+            <div class='open-team-members'>
+                <span class='open-member'>Muhammad Saad <span class='member-id'>| 202512370</span></span>
+                <span class='open-member'>Parneet Kaur <span class='member-id'>| 202612034</span></span>
+                <span class='open-member'>Abdimazhitova Aikol <span class='member-id'>| 202601019</span></span>
+                <span class='open-member'>Nasriddinov Mukhammadzokhir <span class='member-id'>| 202412350</span></span>
+            </div>
+        </div>
     </div>
     </div>
     """, unsafe_allow_html=True)
@@ -1606,6 +1662,13 @@ st.markdown("""
 <div class='app-footer'>
     <div class='footer-title'>🎓 Smart GPA Calculator and Prediction System</div>
     <div class='footer-sub'>University Academic Performance Dashboard · v1.0</div>
+    <div class='footer-team-credit'>Developed by <strong>Team WebForge</strong></div>
+    <div class='footer-members'>
+        Muhammad Saad | 202512370&nbsp;&nbsp;·&nbsp;&nbsp;
+        Parneet Kaur | 202612034&nbsp;&nbsp;·&nbsp;&nbsp;
+        Abdimazhitova Aikol | 202601019&nbsp;&nbsp;·&nbsp;&nbsp;
+        Nasriddinov Mukhammadzokhir | 202412350
+    </div>
     <div class='footer-badges'>
         <span class='footer-badge'>Python</span>
         <span class='footer-badge'>Streamlit</span>

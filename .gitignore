@@ -8,8 +8,12 @@ __pycache__/
 # Virtual environments
 .venv/
 venv/
+venv_broken_backup/
 env/
 ENV/
+
+# Local recovery artifacts (never commit)
+app_backup_before_*.py
 
 # Environment variables
 .env
