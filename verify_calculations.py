@@ -2,10 +2,11 @@
 verify_calculations.py
 ======================
 Verification script for Smart GPA Calculator and Prediction System.
-Team WebForge — Muhammad Saad, Parneet Kaur, Abdimazhitova Aikol,
+Team WebForge -- Muhammad Saad, Parneet Kaur, Abdimazhitova Aikol,
                 Nasriddinov Mukhammadzokhir
 
-Tests the seven rule-sets defined in .agents/rules/project-safety.md.
+Tests the seven rule-sets defined in .agents/rules/project-safety.md,
+plus display-rounding policy (Test 8).
 All formulas and logic mirror app.py exactly.
 
 Run with any Python 3.x interpreter (no external dependencies):
@@ -13,8 +14,15 @@ Run with any Python 3.x interpreter (no external dependencies):
     "C:\\Program Files\\CodeBlocks\\MinGW\\lib\\python3.9\\venv\\scripts\\nt\\python.exe" verify_calculations.py
 """
 
+from decimal import Decimal, ROUND_HALF_UP
+
 EPS = 1e-9   # tolerance for float equality
-DISP = 2     # display decimal places (matches app.py round())
+DISP = 2     # decimal places (legacy; _fmt() is the canonical display formatter)
+
+
+def _fmt(value: float) -> str:
+    """Mirror of app.py _fmt(): ROUND_HALF_UP to 2 decimal places."""
+    return str(Decimal(str(value)).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP))
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -125,12 +133,12 @@ def test_2_prediction_mode():
     assert abs(req - 75.625) < EPS, \
         f"T2 Required Final: expected 75.625, got {req}"
 
-    # Python's round() uses banker's rounding: 75.625 → 75.62 (rounds to even)
-    disp = round(req, DISP)
-    assert disp == 75.62, \
-        f"T2 Displayed Required Final: expected 75.62, got {disp}"
+    # Use _fmt() which applies ROUND_HALF_UP: 75.625 -> '75.63'
+    disp = _fmt(req)
+    assert disp == "75.63", \
+        f"T2 Displayed Required Final: expected 75.63, got {disp}"
 
-    print(f"PASS  Test 2 — Prediction mode: contribution={cc}, "
+    print(f"PASS  Test 2 -- Prediction mode: contribution={cc}, "
           f"required final={disp} (exact: {req})")
 
 
@@ -176,8 +184,8 @@ def test_4_custom_weights():
     assert abs(fs - 80.875) < EPS, \
         f"T4 Final Score: expected 80.875, got {fs}"
 
-    disp = round(fs, DISP)
-    assert disp == 80.88, \
+    disp = _fmt(fs)
+    assert disp == "80.88", \
         f"T4 Displayed Score: expected 80.88, got {disp}"
 
     grade, gpa = score_to_grade(fs)
@@ -266,8 +274,43 @@ def test_7_gpa_scale_boundaries():
 
     assert all_pass, \
         "T7 One or more GPA scale boundary values failed — see lines above"
-    print("PASS  Test 7 — All 9-tier GPA scale boundaries verified")
+    print("PASS  Test 7 -- All 9-tier GPA scale boundaries verified")
 
+
+def test_8_display_rounding():
+    """
+    Test 8 -- ROUND_HALF_UP display policy (mirrors app.py _fmt()).
+
+    Python's default round() uses banker's rounding (round-half-to-even).
+    app.py uses Decimal ROUND_HALF_UP so student-facing scores are
+    conventionally rounded:
+        75.625 -> '75.63'  (banker's would give 75.62)
+        80.875 -> '80.88'  (same both ways)
+    Additional cases verified for completeness:
+        49.75, 93.75, 81.75  -> unchanged
+        85.0 -> '85.00'      -> zero-padded to 2 d.p.
+    """
+    cases = [
+        # (raw_float,  expected_str, description)
+        (75.625, "75.63", "required final -- half-up differs from banker's rounding"),
+        (80.875, "80.88", "custom-weight final score"),
+        (49.75,  "49.75", "current contribution (default demo)"),
+        (93.75,  "93.75", "attendance score (default demo)"),
+        (81.75,  "81.75", "final score (default demo)"),
+        (85.0,   "85.00", "integer score padded to 2 d.p."),
+    ]
+    all_pass = True
+    for raw, expected, desc in cases:
+        got = _fmt(raw)
+        ok = (got == expected)
+        if not ok:
+            all_pass = False
+        print(f"  {'PASS' if ok else 'FAIL'}  {raw} -> '{got}'  "
+              f"(expected '{expected}')  [{desc}]")
+
+    assert all_pass, \
+        "T8 One or more ROUND_HALF_UP display cases failed -- see lines above"
+    print("PASS  Test 8 -- ROUND_HALF_UP display rounding policy verified")
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Entry point
@@ -275,7 +318,7 @@ def test_7_gpa_scale_boundaries():
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("Smart GPA Calculator — Verification Script")
+    print("Smart GPA Calculator -- Verification Script")
     print("Team WebForge  |  aligned with project-safety.md")
     print("=" * 60)
     print()
@@ -289,8 +332,11 @@ if __name__ == "__main__":
     print()
     print("--- GPA Scale Boundary Tests (Test 7) ---")
     test_7_gpa_scale_boundaries()
+    print()
+    print("--- Display Rounding Tests (Test 8) ---")
+    test_8_display_rounding()
 
     print()
     print("=" * 60)
-    print("All 7 verification tests PASSED.")
+    print("All 8 verification tests PASSED.")
     print("=" * 60)

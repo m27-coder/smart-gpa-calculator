@@ -3,8 +3,20 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import numpy as np
+from decimal import Decimal, ROUND_HALF_UP
 
 PROJECT_TITLE = "Smart GPA Calculator and Prediction System"
+
+
+def _fmt(value: float) -> str:
+    """Format a numeric value to 2 d.p. using ROUND_HALF_UP (conventional rounding).
+
+    Uses Decimal arithmetic so that 75.625 -> '75.63' and 80.875 -> '80.88'.
+    Internal calculations always use the original full-precision floats;
+    this helper is called only at the point of display.
+    """
+    return str(Decimal(str(value)).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP))
+
 
 # ──────────────────────────────────────────────────────────────────────────────
 # PAGE CONFIG
@@ -1176,7 +1188,7 @@ with st.sidebar:
     _att_col    = "#f87171" if attendance_failed else "#34d399"
     st.markdown(f"""<div class='score-pill' style='border-color:{_att_border};background:{_att_bg};'>
         <span>📅 Attendance <small style='opacity:.6;'>(20%)</small></span>
-        <span class='pill-val' style='color:{_att_col};'>{attendance_score:.2f}%</span>
+        <span class='pill-val' style='color:{_att_col};'>{_fmt(attendance_score)}%</span>
     </div>""", unsafe_allow_html=True)
 
     # Attendance status + policy note
@@ -1357,7 +1369,7 @@ st.markdown(card_accent_css, unsafe_allow_html=True)
 
 c1, c2, c3, c4 = st.columns(4)
 with c1:
-    _cc_disp = f"{current_contribution:.2f}" if weights_valid else "—"
+    _cc_disp = _fmt(current_contribution) if weights_valid else "—"
     st.metric("📋 Current Contribution", _cc_disp,
               help=f"Assignment×{w_assignment}% + Midterm×{w_midterm}% + Attendance×{w_attendance}%")
 with c2:
@@ -1367,14 +1379,14 @@ with c2:
         elif attendance_failed:
             _disp2 = "N/A (Attendance Fail)"
         else:
-            _disp2 = f"{overall_score:.2f}"
+            _disp2 = _fmt(overall_score)
         st.metric("🏁 Final Score", _disp2,
                   help=f"Assignment×{w_assignment}% + Midterm×{w_midterm}% + Final×{w_final}% + Attendance×{w_attendance}%")
     else:
         if not weights_valid:
             _disp_rf = "—"
         elif required_final is not None and required_final != float('inf'):
-            _disp_rf = f"{required_final:.2f}"
+            _disp_rf = _fmt(required_final)
         else:
             _disp_rf = "—"
         st.metric("🎯 Required Final Exam", _disp_rf,
@@ -1447,7 +1459,7 @@ with left_col:
     elif attendance_failed:
         score_line = "Attendance: <b>Policy Failure</b>"
     elif has_final:
-        score_line = f"Final Score: <b>{overall_score:.2f}</b>"
+        score_line = f"Final Score: <b>{_fmt(overall_score)}</b>"
     else:
         score_line = f"Target Score: <b>{target_score}</b>"
     st.markdown(f"""
@@ -1499,13 +1511,13 @@ with right_col:
         "Component":    ["📝 Assignment", "📖 Midterm Exam", "📅 Attendance",
                          "📝 Final Exam" if has_final else "📝 Final Exam (pending)"],
         "Raw Score":    [str(assignment_score), str(midterm_score),
-                         f"{attendance_score:.2f}%",
+                         f"{_fmt(attendance_score)}%",
                          str(final_score) if has_final else "—"],
         "Weight":       [f"{w_assignment}%", f"{w_midterm}%",
                          f"{w_attendance}%", f"{w_final}%"],
-        "Contribution": [f"{assignment_contrib:.2f}", f"{midterm_contrib:.2f}",
-                         f"{attendance_contrib:.2f}",
-                         f"{final_contrib:.2f}" if (has_final and final_contrib is not None) else "—"],
+        "Contribution": [_fmt(assignment_contrib), _fmt(midterm_contrib),
+                         _fmt(attendance_contrib),
+                         _fmt(final_contrib) if (has_final and final_contrib is not None) else "—"],
     }
     # astype(str) ensures every column is object dtype — prevents PyArrow int64 inference
     st.dataframe(pd.DataFrame(rows).astype(str), hide_index=True, width="stretch")
