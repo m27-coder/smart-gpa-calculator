@@ -47,56 +47,56 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
 
 /* ── App background ── */
 .stApp {
-    background: #0b0a1a;
+    background: #0F172A;
     background-image:
-        radial-gradient(ellipse 80% 60% at 20% 0%,  rgba(109,40,217,0.18) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 50% at 85% 10%, rgba(37,99,235,0.15)  0%, transparent 55%),
-        radial-gradient(ellipse 50% 40% at 50% 90%, rgba(16,185,129,0.08) 0%, transparent 50%);
+        radial-gradient(ellipse 80% 60% at 20% 0%,  rgba(59,130,246,0.10) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 85% 10%, rgba(37,99,235,0.08)  0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 50% 90%, rgba(16,185,129,0.05) 0%, transparent 50%);
     min-height: 100vh;
 }
 
 /* ── Sidebar ── */
 [data-testid="stSidebar"] {
-    background: linear-gradient(180deg, #0d0b1f 0%, #0f1629 60%, #0a1020 100%) !important;
-    border-right: 1px solid rgba(139,92,246,0.2) !important;
+    background: linear-gradient(180deg, #0A0F1E 0%, #0F172A 60%, #0A0F1E 100%) !important;
+    border-right: 1px solid rgba(59,130,246,0.15) !important;
 }
-[data-testid="stSidebar"] * { color: #e2e0f0 !important; }
+[data-testid="stSidebar"] * { color: #F1F5F9 !important; }
 [data-testid="stSidebar"] .stSlider [data-testid="stThumbValue"] {
-    color: #a78bfa !important;
+    color: #60A5FA !important;
 }
 
 /* ── Sidebar score pill ── */
 .score-pill {
     display: flex; align-items: center; justify-content: space-between;
-    background: rgba(139,92,246,0.1);
-    border: 1px solid rgba(139,92,246,0.25);
+    background: rgba(59,130,246,0.08);
+    border: 1px solid rgba(59,130,246,0.20);
     border-radius: 10px;
     padding: 8px 14px;
     margin: 6px 0 14px 0;
-    font-size: 0.82rem; color: #c4b5fd;
+    font-size: 0.82rem; color: #94A3B8;
 }
 .score-pill .pill-val {
-    font-size: 1.1rem; font-weight: 700; color: #a78bfa;
+    font-size: 1.1rem; font-weight: 700; color: #60A5FA;
 }
 
 /* ── Sidebar section label ── */
 .sb-label {
     font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
-    text-transform: uppercase; color: #6d5d9e !important;
+    text-transform: uppercase; color: #64748B !important;
     margin: 18px 0 8px 2px;
 }
 
 /* ── Sidebar divider ── */
 .sb-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(59,130,246,0.25), transparent);
     margin: 14px 0;
 }
 
 /* ── Metric cards ── */
 div[data-testid="metric-container"] {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(30,41,59,0.80);
+    border: 1px solid rgba(51,65,85,0.70);
     border-radius: 18px;
     padding: 22px 20px 18px;
     backdrop-filter: blur(16px);
@@ -107,18 +107,18 @@ div[data-testid="metric-container"] {
 }
 div[data-testid="metric-container"]:hover {
     transform: translateY(-4px);
-    border-color: rgba(139,92,246,0.4);
-    box-shadow: 0 16px 40px rgba(109,40,217,0.22), 0 0 0 1px rgba(139,92,246,0.15);
+    border-color: rgba(59,130,246,0.40);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(59,130,246,0.15);
 }
 div[data-testid="metric-container"] label {
-    color: #7c6fa0 !important;
+    color: #64748B !important;
     font-size: 0.72rem !important;
     font-weight: 700 !important;
     letter-spacing: 0.1em !important;
     text-transform: uppercase !important;
 }
 div[data-testid="metric-container"] [data-testid="stMetricValue"] {
-    color: #f0eeff !important;
+    color: #F1F5F9 !important;
     font-size: 2rem !important;
     font-weight: 800 !important;
     letter-spacing: -0.02em !important;
@@ -128,24 +128,24 @@ div[data-testid="metric-container"] [data-testid="stMetricValue"] {
 .sec-hdr {
     display: flex; align-items: center; gap: 10px;
     font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em;
-    text-transform: uppercase; color: #7c6fa0;
+    text-transform: uppercase; color: #64748B;
     margin: 0 0 16px;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgba(139,92,246,0.18);
+    border-bottom: 1px solid rgba(51,65,85,0.60);
 }
 .sec-hdr span { font-size: 1rem; }
 
 /* ── Grade badge ── */
 .grade-wrap {
     text-align: center; padding: 28px 16px 22px;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.07);
+    background: rgba(30,41,59,0.60);
+    border: 1px solid rgba(51,65,85,0.60);
     border-radius: 22px;
     position: relative; overflow: hidden;
 }
 .grade-wrap::before {
     content:''; position:absolute; inset:0;
-    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(139,92,246,0.12), transparent);
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(59,130,246,0.08), transparent);
     pointer-events: none;
 }
 .grade-letter {
@@ -174,14 +174,14 @@ div[data-testid="metric-container"] [data-testid="stMetricValue"] {
 .grade-F  { background: linear-gradient(135deg,#374151,#6b7280); color:#fff;
            box-shadow: 0 8px 28px rgba(107,114,128,0.25); }
 .grade-gpa {
-    font-size: 0.82rem; font-weight: 600; color: #9d8ec4;
+    font-size: 0.82rem; font-weight: 600; color: #94A3B8;
     letter-spacing: 0.04em;
 }
-.grade-gpa strong { color: #e0d8ff; font-size: 1rem; }
+.grade-gpa strong { color: #F1F5F9; font-size: 1rem; }
 .grade-sub {
-    font-size: 0.78rem; color: #7060a0; margin-top: 6px;
+    font-size: 0.78rem; color: #64748B; margin-top: 6px;
 }
-.grade-sub b { color: #b8a8e0; }
+.grade-sub b { color: #BAD0FF; }
 
 /* ── Performance comment box ── */
 .perf-box {
@@ -201,10 +201,10 @@ div[data-testid="metric-container"] [data-testid="stMetricValue"] {
 }
 .perf-success::before { background: linear-gradient(180deg,#10b981,#34d399); }
 .perf-info {
-    background: rgba(99,102,241,0.09);
-    border: 1px solid rgba(99,102,241,0.22);
+    background: rgba(59,130,246,0.09);
+    border: 1px solid rgba(59,130,246,0.22);
 }
-.perf-info::before { background: linear-gradient(180deg,#6366f1,#818cf8); }
+.perf-info::before { background: linear-gradient(180deg,#3B82F6,#60A5FA); }
 .perf-warn {
     background: rgba(245,158,11,0.09);
     border: 1px solid rgba(245,158,11,0.22);
@@ -217,41 +217,41 @@ div[data-testid="metric-container"] [data-testid="stMetricValue"] {
 .perf-danger::before { background: linear-gradient(180deg,#ef4444,#f87171); }
 .perf-icon { font-size: 2rem; flex-shrink: 0; margin-top: 2px; }
 .perf-content .perf-title {
-    font-size: 1rem; font-weight: 700; color: #f0eeff;
+    font-size: 1rem; font-weight: 700; color: #F1F5F9;
     margin-bottom: 6px;
 }
 .perf-content .perf-body {
-    font-size: 0.88rem; line-height: 1.65; color: #b0a8d0;
+    font-size: 0.88rem; line-height: 1.65; color: #94A3B8;
 }
 
 /* ── Formula section ── */
 .formula-outer {
-    background: rgba(10,8,28,0.65);
-    border: 1px solid rgba(139,92,246,0.2);
+    background: rgba(10,15,30,0.65);
+    border: 1px solid rgba(51,65,85,0.60);
     border-radius: 20px;
     overflow: hidden;
 }
 .formula-header {
-    background: linear-gradient(90deg, rgba(109,40,217,0.25), rgba(37,99,235,0.15));
+    background: linear-gradient(90deg, rgba(37,99,235,0.15), rgba(59,130,246,0.10));
     padding: 14px 24px;
-    border-bottom: 1px solid rgba(139,92,246,0.2);
+    border-bottom: 1px solid rgba(51,65,85,0.50);
     font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em;
-    text-transform: uppercase; color: #9d8ec4;
+    text-transform: uppercase; color: #64748B;
 }
 .formula-body { padding: 20px 24px; }
 .formula-block {
-    background: rgba(15,10,40,0.6);
-    border: 1px solid rgba(139,92,246,0.15);
+    background: rgba(15,23,42,0.70);
+    border: 1px solid rgba(51,65,85,0.40);
     border-radius: 12px;
     padding: 16px 18px;
     margin-bottom: 14px;
     font-family: 'JetBrains Mono', 'Courier New', monospace;
-    font-size: 0.82rem; line-height: 1.9; color: #b8b0d8;
+    font-size: 0.82rem; line-height: 1.9; color: #CBD5E1;
 }
 .formula-block .fb-title {
     font-family: 'Inter', sans-serif;
     font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
-    text-transform: uppercase; color: #6d5d9e;
+    text-transform: uppercase; color: #64748B;
     margin-bottom: 10px;
 }
 .formula-block .fb-eq { color: #a0ffcc; font-weight: 600; }
@@ -259,14 +259,14 @@ div[data-testid="metric-container"] [data-testid="stMetricValue"] {
 .formula-block .fb-eq-c { color: #fcd34d; font-weight: 600; }
 .weight-chip {
     display: inline-flex; align-items: center; gap: 6px;
-    background: rgba(139,92,246,0.12);
-    border: 1px solid rgba(139,92,246,0.2);
+    background: rgba(59,130,246,0.10);
+    border: 1px solid rgba(59,130,246,0.20);
     border-radius: 8px; padding: 4px 10px;
-    font-size: 0.78rem; color: #c4b5fd;
+    font-size: 0.78rem; color: #94A3B8;
     margin: 3px 4px 3px 0;
 }
 .weight-chip .wc-pct {
-    font-weight: 700; color: #a78bfa;
+    font-weight: 700; color: #60A5FA;
 }
 
 /* ── Grading table rows ── */
@@ -275,14 +275,14 @@ div[data-testid="metric-container"] [data-testid="stMetricValue"] {
     padding: 10px 16px;
     border-radius: 10px;
     margin-bottom: 6px;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(30,41,59,0.50);
+    border: 1px solid rgba(51,65,85,0.40);
     font-size: 0.88rem;
 }
-.grade-row:hover { background: rgba(139,92,246,0.08); border-color: rgba(139,92,246,0.2); }
-.grade-row .gr-range { color: #9d8ec4; flex: 1; font-size: 0.82rem; }
+.grade-row:hover { background: rgba(59,130,246,0.07); border-color: rgba(59,130,246,0.22); }
+.grade-row .gr-range { color: #94A3B8; flex: 1; font-size: 0.82rem; }
 .grade-row .gr-letter { font-weight: 800; font-size: 1.2rem; width: 28px; }
-.grade-row .gr-gpa { color: #7c6fa0; font-size: 0.8rem; width: 50px; text-align: right; }
+.grade-row .gr-gpa { color: #64748B; font-size: 0.8rem; width: 50px; text-align: right; }
 .grade-row .gr-tag {
     font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em;
     padding: 2px 10px; border-radius: 20px;
@@ -301,21 +301,21 @@ div[data-testid="metric-container"] [data-testid="stMetricValue"] {
 .app-footer {
     margin-top: 56px;
     padding: 32px 0 24px;
-    border-top: 1px solid rgba(139,92,246,0.18);
+    border-top: 1px solid rgba(51,65,85,0.50);
     text-align: center;
     position: relative;
 }
 .app-footer::before {
     content: '';
     position: absolute; top: 0; left: 20%; right: 20%; height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(139,92,246,0.5), rgba(99,102,241,0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(59,130,246,0.40), rgba(96,165,250,0.30), transparent);
 }
 .footer-title {
-    font-size: 1.05rem; font-weight: 700; color: #c4b5fd;
+    font-size: 1.05rem; font-weight: 700; color: #94A3B8;
     letter-spacing: 0.02em; margin-bottom: 6px;
 }
 .footer-sub {
-    font-size: 0.76rem; color: #4a3f70;
+    font-size: 0.76rem; color: #475569;
     letter-spacing: 0.04em; margin-bottom: 14px;
 }
 .footer-badges {
@@ -325,19 +325,19 @@ div[data-testid="metric-container"] [data-testid="stMetricValue"] {
 .footer-badge {
     font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em;
     padding: 3px 14px; border-radius: 20px;
-    background: rgba(139,92,246,0.12);
-    border: 1px solid rgba(139,92,246,0.22);
-    color: #9d8ec4;
+    background: rgba(59,130,246,0.08);
+    border: 1px solid rgba(59,130,246,0.18);
+    color: #64748B;
     transition: background 0.2s;
 }
-.footer-badge:hover { background: rgba(139,92,246,0.22); }
+.footer-badge:hover { background: rgba(59,130,246,0.16); }
 .footer-team-credit {
-    font-size: 0.82rem; font-weight: 700; color: #c4b5fd;
+    font-size: 0.82rem; font-weight: 700; color: #94A3B8;
     letter-spacing: 0.03em; margin-bottom: 8px;
 }
-.footer-team-credit strong { color: #a78bfa; }
+.footer-team-credit strong { color: #60A5FA; }
 .footer-members {
-    font-size: 0.72rem; color: #5a4f80;
+    font-size: 0.72rem; color: #475569;
     letter-spacing: 0.02em; margin-bottom: 14px;
     line-height: 1.8;
 }
@@ -347,23 +347,23 @@ div[data-testid="metric-container"] [data-testid="stMetricValue"] {
 [data-testid="stSidebar"] .stButton > button {
     width: 100%;
     border-radius: 10px;
-    border: 1px solid rgba(139,92,246,0.35);
-    background: rgba(139,92,246,0.12);
-    color: #c4b5fd !important;
+    border: 1px solid rgba(59,130,246,0.28);
+    background: rgba(59,130,246,0.08);
+    color: #94A3B8 !important;
     font-size: 0.78rem;
     font-weight: 600;
     transition: all 0.2s;
 }
 [data-testid="stSidebar"] .stButton > button:hover {
-    border-color: rgba(167,139,250,0.6);
-    background: rgba(139,92,246,0.22);
-    box-shadow: 0 4px 14px rgba(139,92,246,0.2);
+    border-color: rgba(96,165,250,0.50);
+    background: rgba(59,130,246,0.16);
+    box-shadow: 0 4px 14px rgba(59,130,246,0.18);
 }
 
 /* ── Main area primary Start / action buttons ── */
 .stButton > button[kind="primary"],
 [data-testid="stMainBlockContainer"] .stButton > button {
-    background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%) !important;
+    background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%) !important;
     border: none !important;
     color: #fff !important;
     font-weight: 700 !important;
@@ -371,40 +371,40 @@ div[data-testid="metric-container"] [data-testid="stMetricValue"] {
     letter-spacing: 0.04em !important;
     border-radius: 14px !important;
     padding: 14px 0 !important;
-    box-shadow: 0 8px 28px rgba(109,40,217,0.38) !important;
+    box-shadow: 0 8px 28px rgba(37,99,235,0.35) !important;
     transition: all 0.25s !important;
 }
 [data-testid="stMainBlockContainer"] .stButton > button:hover {
-    background: linear-gradient(135deg, #6d28d9 0%, #4338ca 100%) !important;
-    box-shadow: 0 12px 36px rgba(109,40,217,0.5) !important;
+    background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 100%) !important;
+    box-shadow: 0 12px 36px rgba(37,99,235,0.50) !important;
     transform: translateY(-2px) !important;
 }
 
 /* ── Generic text overrides ── */
-p, li { color: #b0a8cc !important; }
-h1, h2, h3, h4, h5 { color: #f0eeff !important; }
+p, li { color: #CBD5E1 !important; }
+h1, h2, h3, h4, h5 { color: #F1F5F9 !important; }
 [data-testid="stDataFrame"] { border-radius: 14px; overflow: hidden; }
 [data-testid="stDataFrame"] table { font-size: 0.84rem !important; }
 
 /* ── Slider thumb colour ── */
 [data-baseweb="slider"] [data-testid="stThumb"] {
-    background: #7c3aed !important;
-    border-color: #a78bfa !important;
+    background: #3B82F6 !important;
+    border-color: #60A5FA !important;
 }
 
 /* ── Number input improvements ── */
 [data-testid="stNumberInput"] input {
     border-radius: 9px !important;
-    border-color: rgba(139,92,246,0.3) !important;
-    background: rgba(139,92,246,0.06) !important;
-    color: #f0eeff !important;
+    border-color: rgba(51,65,85,0.70) !important;
+    background: rgba(30,41,59,0.60) !important;
+    color: #F1F5F9 !important;
     font-size: 0.9rem !important;
 }
 
 /* ── Section card wrapper ── */
 .section-card {
-    background: rgba(255,255,255,0.025);
-    border: 1px solid rgba(139,92,246,0.12);
+    background: rgba(30,41,59,0.40);
+    border: 1px solid rgba(51,65,85,0.40);
     border-radius: 22px;
     padding: 28px 24px;
     margin-bottom: 24px;
@@ -412,8 +412,8 @@ h1, h2, h3, h4, h5 { color: #f0eeff !important; }
 
 /* ── Chart section background ── */
 .chart-bg {
-    background: rgba(10,8,28,0.55);
-    border: 1px solid rgba(139,92,246,0.14);
+    background: rgba(15,23,42,0.55);
+    border: 1px solid rgba(51,65,85,0.35);
     border-radius: 18px;
     padding: 20px 18px;
 }
@@ -429,11 +429,11 @@ h1, h2, h3, h4, h5 { color: #f0eeff !important; }
 .open-card {
     max-width: 740px;
     width: 100%;
-    background: rgba(10,8,28,0.88);
-    border: 1px solid rgba(139,92,246,0.35);
+    background: rgba(15,23,42,0.92);
+    border: 1px solid rgba(59,130,246,0.28);
     border-radius: 28px;
     padding: 60px 64px 52px;
-    box-shadow: 0 24px 90px rgba(0,0,0,0.55), 0 0 0 1px rgba(139,92,246,0.08);
+    box-shadow: 0 24px 90px rgba(0,0,0,0.55), 0 0 0 1px rgba(59,130,246,0.06);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -441,27 +441,27 @@ h1, h2, h3, h4, h5 { color: #f0eeff !important; }
 .open-card::before {
     content: '';
     position: absolute; inset: 0;
-    background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(139,92,246,0.14), transparent);
+    background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(59,130,246,0.10), transparent);
     pointer-events: none;
 }
 .open-emoji { font-size: 4rem; line-height: 1; margin-bottom: 22px; }
 .open-title {
     font-size: 2.5rem; font-weight: 900; line-height: 1.22;
-    background: linear-gradient(100deg,#c4b5fd 0%,#818cf8 45%,#67e8f9 100%);
+    background: linear-gradient(100deg, #60A5FA 0%, #3B82F6 45%, #67e8f9 100%);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     margin-bottom: 18px;
 }
 .open-subtitle {
-    font-size: 1.0rem; color: #9d8ec4; margin-bottom: 18px; line-height: 1.65;
+    font-size: 1.0rem; color: #94A3B8; margin-bottom: 18px; line-height: 1.65;
     max-width: 560px; margin-left: auto; margin-right: auto;
 }
 .open-desc {
-    font-size: 0.88rem; color: #5a4f80; line-height: 1.8;
+    font-size: 0.88rem; color: #475569; line-height: 1.8;
     margin-bottom: 32px; max-width: 520px; margin-left: auto; margin-right: auto;
 }
 .open-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(139,92,246,0.35), transparent);
+    background: linear-gradient(90deg, transparent, rgba(59,130,246,0.30), transparent);
     margin: 0 0 30px;
 }
 .open-features {
@@ -469,48 +469,48 @@ h1, h2, h3, h4, h5 { color: #f0eeff !important; }
     justify-content: center; margin-bottom: 34px;
 }
 .open-chip {
-    background: rgba(139,92,246,0.1);
-    border: 1px solid rgba(139,92,246,0.28);
+    background: rgba(59,130,246,0.08);
+    border: 1px solid rgba(59,130,246,0.22);
     border-radius: 50px;
     padding: 6px 18px;
-    font-size: 0.79rem; color: #b8a8e0; font-weight: 600;
+    font-size: 0.79rem; color: #94A3B8; font-weight: 600;
     letter-spacing: 0.02em;
 }
 .open-creator {
-    font-size: 0.85rem; color: #5a4f80;
+    font-size: 0.85rem; color: #475569;
     margin-bottom: 28px; letter-spacing: 0.04em;
     padding: 10px 20px;
-    background: rgba(139,92,246,0.06);
+    background: rgba(59,130,246,0.05);
     border-radius: 30px;
     display: inline-block;
 }
-.open-creator strong { color: #a78bfa; font-weight: 700; }
+.open-creator strong { color: #60A5FA; font-weight: 700; }
 
 /* ── Team WebForge block (opening page) ── */
 .open-team-block {
     margin-top: 4px;
     margin-bottom: 28px;
     padding: 14px 20px;
-    background: rgba(139,92,246,0.06);
-    border: 1px solid rgba(139,92,246,0.18);
+    background: rgba(59,130,246,0.05);
+    border: 1px solid rgba(59,130,246,0.15);
     border-radius: 16px;
     text-align: center;
 }
 .open-team-label {
     font-size: 0.72rem; font-weight: 700;
     letter-spacing: 0.12em; text-transform: uppercase;
-    color: #9d8ec4; margin-bottom: 10px;
+    color: #64748B; margin-bottom: 10px;
 }
 .open-team-members {
     display: flex; flex-wrap: wrap;
     justify-content: center; gap: 4px 14px;
 }
 .open-member {
-    font-size: 0.8rem; font-weight: 500; color: #c4b5fd;
+    font-size: 0.8rem; font-weight: 500; color: #94A3B8;
     white-space: nowrap;
 }
 .member-id {
-    font-size: 0.72rem; font-weight: 400; color: #5a4f80;
+    font-size: 0.72rem; font-weight: 400; color: #475569;
 }
 @media (max-width: 480px) {
     .open-team-members { flex-direction: column; align-items: center; gap: 6px; }
@@ -531,8 +531,8 @@ h1, h2, h3, h4, h5 { color: #f0eeff !important; }
     to   { opacity: 1; transform: translateY(0);    }
 }
 @keyframes subtlePulse {
-    0%,100% { box-shadow: 0 0 0 0   rgba(139,92,246,0);    }
-    50%      { box-shadow: 0 0 22px 4px rgba(139,92,246,0.18); }
+    0%,100% { box-shadow: 0 0 0 0   rgba(59,130,246,0);    }
+    50%      { box-shadow: 0 0 22px 4px rgba(59,130,246,0.18); }
 }
 
 /* ── Opening page entrance ── */
@@ -557,7 +557,7 @@ h1, h2, h3, h4, h5 { color: #f0eeff !important; }
 }
 .open-chip:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(139,92,246,0.22);
+    box-shadow: 0 6px 18px rgba(59,130,246,0.20);
 }
 
 /* ── Section header slide-in ── */
@@ -566,14 +566,14 @@ h1, h2, h3, h4, h5 { color: #f0eeff !important; }
     animation-delay: 0.05s;
 }
 
-/* ── Grade badge hover glow ── */
+/* ── Grade badge hover ── */
 .grade-wrap {
     transition: box-shadow 0.28s ease, border-color 0.28s ease, transform 0.22s ease;
 }
 .grade-wrap:hover {
     transform: translateY(-3px);
-    border-color: rgba(139,92,246,0.5) !important;
-    box-shadow: 0 20px 56px rgba(109,40,217,0.28) !important;
+    border-color: rgba(59,130,246,0.45) !important;
+    box-shadow: 0 20px 56px rgba(37,99,235,0.22) !important;
 }
 
 /* ── Performance insight box hover ── */
@@ -598,13 +598,13 @@ h1, h2, h3, h4, h5 { color: #f0eeff !important; }
     transition: box-shadow 0.25s ease;
 }
 .formula-outer:hover {
-    box-shadow: 0 10px 32px rgba(109,40,217,0.14);
+    box-shadow: 0 10px 32px rgba(37,99,235,0.12);
 }
 .formula-block {
     transition: border-color 0.2s ease;
 }
 .formula-block:hover {
-    border-color: rgba(139,92,246,0.32) !important;
+    border-color: rgba(59,130,246,0.30) !important;
 }
 
 /* ── Weight chip hover ── */
@@ -614,7 +614,7 @@ h1, h2, h3, h4, h5 { color: #f0eeff !important; }
 }
 .weight-chip:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 14px rgba(139,92,246,0.2);
+    box-shadow: 0 4px 14px rgba(59,130,246,0.18);
 }
 
 /* ── Score pill hover ── */
@@ -635,8 +635,8 @@ h1, h2, h3, h4, h5 { color: #f0eeff !important; }
     transition: box-shadow 0.25s ease, border-color 0.25s ease;
 }
 .section-card:hover {
-    box-shadow: 0 8px 28px rgba(109,40,217,0.1);
-    border-color: rgba(139,92,246,0.22) !important;
+    box-shadow: 0 8px 28px rgba(37,99,235,0.10);
+    border-color: rgba(59,130,246,0.20) !important;
 }
 
 /* ── Open creator pill pulse (one shot, then stops) ── */
@@ -657,132 +657,149 @@ if not _dark:
 
     /* App background */
     .stApp {
-        background: #f7f6ff !important;
+        background: #F8FAFC !important;
         background-image:
-            radial-gradient(ellipse 80% 60% at 20% 0%, rgba(109,40,217,0.06), transparent 60%),
-            radial-gradient(ellipse 60% 50% at 85% 10%, rgba(37,99,235,0.05), transparent 55%) !important;
+            radial-gradient(ellipse 80% 60% at 20% 0%, rgba(37,99,235,0.04), transparent 60%),
+            radial-gradient(ellipse 60% 50% at 85% 10%, rgba(59,130,246,0.03), transparent 55%) !important;
     }
 
     /* Sidebar */
     [data-testid="stSidebar"] {
-        background: linear-gradient(180deg,#eeebff 0%,#e5e0f8 60%,#eae7f8 100%) !important;
-        border-right: 1px solid rgba(139,92,246,0.2) !important;
+        background: linear-gradient(180deg,#F1F5F9 0%,#E2E8F0 60%,#F1F5F9 100%) !important;
+        border-right: 1px solid rgba(37,99,235,0.12) !important;
     }
-    [data-testid="stSidebar"] * { color: #2d1f5e !important; }
+    [data-testid="stSidebar"] * { color: #0F172A !important; }
     [data-testid="stSidebar"] .stButton > button {
-        background: rgba(139,92,246,0.1) !important;
-        border-color: rgba(109,40,217,0.3) !important;
-        color: #3d2f7e !important;
+        background: rgba(37,99,235,0.07) !important;
+        border-color: rgba(37,99,235,0.22) !important;
+        color: #1E40AF !important;
     }
     [data-testid="stSidebar"] .stButton > button:hover {
-        background: rgba(139,92,246,0.2) !important;
+        background: rgba(37,99,235,0.14) !important;
     }
 
     /* Metric cards */
     div[data-testid="metric-container"] {
-        background: rgba(255,255,255,0.95) !important;
-        border: 1px solid rgba(139,92,246,0.14) !important;
-        box-shadow: 0 4px 20px rgba(109,40,217,0.07) !important;
+        background: rgba(255,255,255,0.97) !important;
+        border: 1px solid rgba(226,232,240,0.90) !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
     }
     div[data-testid="metric-container"]:hover {
-        box-shadow: 0 10px 32px rgba(109,40,217,0.13) !important;
-        border-color: rgba(139,92,246,0.28) !important;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+        border-color: rgba(37,99,235,0.25) !important;
     }
-    div[data-testid="metric-container"] label { color: #5a4f80 !important; }
-    div[data-testid="metric-container"] [data-testid="stMetricValue"] { color: #1a1535 !important; }
+    div[data-testid="metric-container"] label { color: #64748B !important; }
+    div[data-testid="metric-container"] [data-testid="stMetricValue"] { color: #0F172A !important; }
 
     /* Section header */
-    .sec-hdr { color: #5a4f80 !important; border-bottom-color: rgba(109,40,217,0.15) !important; }
+    .sec-hdr { color: #64748B !important; border-bottom-color: rgba(226,232,240,0.80) !important; }
 
     /* Grade wrap */
     .grade-wrap {
         background: rgba(255,255,255,0.97) !important;
-        border-color: rgba(139,92,246,0.18) !important;
-        box-shadow: 0 8px 32px rgba(109,40,217,0.07) !important;
+        border-color: rgba(226,232,240,0.90) !important;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.06) !important;
     }
-    .grade-gpa { color: #5a4f80 !important; }
-    .grade-gpa strong { color: #1a1535 !important; }
-    .grade-sub { color: #7060a0 !important; }
-    .grade-sub b { color: #3d2f7e !important; }
+    .grade-gpa { color: #64748B !important; }
+    .grade-gpa strong { color: #0F172A !important; }
+    .grade-sub { color: #64748B !important; }
+    .grade-sub b { color: #1D4ED8 !important; }
 
     /* Performance boxes */
     .perf-success { background: rgba(16,185,129,0.07) !important; }
-    .perf-info    { background: rgba(99,102,241,0.07) !important; }
+    .perf-info    { background: rgba(37,99,235,0.07) !important; }
     .perf-warn    { background: rgba(245,158,11,0.07) !important; }
     .perf-danger  { background: rgba(239,68,68,0.07) !important; }
-    .perf-content .perf-title { color: #1a1535 !important; }
-    .perf-content .perf-body  { color: #4a3f70 !important; }
+    .perf-content .perf-title { color: #0F172A !important; }
+    .perf-content .perf-body  { color: #334155 !important; }
 
     /* Score pill (sidebar) */
-    .score-pill { background: rgba(109,40,217,0.07) !important; border-color: rgba(109,40,217,0.2) !important; color: #3d2f7e !important; }
-    .score-pill .pill-val { color: #5b21b6 !important; }
+    .score-pill { background: rgba(37,99,235,0.05) !important; border-color: rgba(37,99,235,0.16) !important; color: #334155 !important; }
+    .score-pill .pill-val { color: #2563EB !important; }
 
     /* Sidebar labels & divider */
-    .sb-label { color: #5a4f80 !important; }
-    .sb-divider { background: linear-gradient(90deg,transparent,rgba(109,40,217,0.2),transparent) !important; }
+    .sb-label { color: #64748B !important; }
+    .sb-divider { background: linear-gradient(90deg,transparent,rgba(37,99,235,0.16),transparent) !important; }
 
     /* Weight chips */
-    .weight-chip { background: rgba(109,40,217,0.07) !important; border-color: rgba(109,40,217,0.18) !important; color: #3d2f7e !important; }
-    .weight-chip .wc-pct { color: #5b21b6 !important; }
+    .weight-chip { background: rgba(37,99,235,0.06) !important; border-color: rgba(37,99,235,0.15) !important; color: #334155 !important; }
+    .weight-chip .wc-pct { color: #2563EB !important; }
 
     /* Grade rows */
-    .grade-row { background: rgba(255,255,255,0.85) !important; border-color: rgba(109,40,217,0.1) !important; }
-    .grade-row:hover { background: rgba(109,40,217,0.05) !important; border-color: rgba(109,40,217,0.2) !important; }
-    .grade-row .gr-range { color: #5a4f80 !important; }
-    .grade-row .gr-gpa   { color: #7060a0 !important; }
+    .grade-row { background: rgba(255,255,255,0.90) !important; border-color: rgba(226,232,240,0.80) !important; }
+    .grade-row:hover { background: rgba(37,99,235,0.04) !important; border-color: rgba(37,99,235,0.18) !important; }
+    .grade-row .gr-range { color: #64748B !important; }
+    .grade-row .gr-gpa   { color: #94A3B8 !important; }
 
     /* Formula */
-    .formula-outer { background: rgba(255,255,255,0.92) !important; border-color: rgba(109,40,217,0.13) !important; }
-    .formula-header { background: linear-gradient(90deg,rgba(109,40,217,0.07),rgba(37,99,235,0.04)) !important; color: #4a3f70 !important; border-bottom-color: rgba(109,40,217,0.12) !important; }
-    .formula-block { background: rgba(238,235,255,0.65) !important; border-color: rgba(109,40,217,0.12) !important; color: #2d1f5e !important; }
-    .formula-block .fb-title { color: #5a4f80 !important; }
+    .formula-outer { background: rgba(255,255,255,0.95) !important; border-color: rgba(226,232,240,0.80) !important; }
+    .formula-header { background: linear-gradient(90deg,rgba(37,99,235,0.05),rgba(59,130,246,0.03)) !important; color: #64748B !important; border-bottom-color: rgba(226,232,240,0.70) !important; }
+    .formula-block { background: rgba(241,245,249,0.80) !important; border-color: rgba(226,232,240,0.70) !important; color: #0F172A !important; }
+    .formula-block .fb-title { color: #64748B !important; }
     .formula-block .fb-eq   { color: #065f46 !important; }
     .formula-block .fb-eq-b { color: #1e40af !important; }
     .formula-block .fb-eq-c { color: #92400e !important; }
 
     /* Opening card */
     .open-card {
-        background: rgba(255,255,255,0.97) !important;
-        border-color: rgba(109,40,217,0.2) !important;
-        box-shadow: 0 24px 80px rgba(109,40,217,0.09), 0 4px 16px rgba(0,0,0,0.05) !important;
+        background: rgba(255,255,255,0.98) !important;
+        border-color: rgba(226,232,240,0.90) !important;
+        box-shadow: 0 24px 80px rgba(0,0,0,0.10), 0 4px 16px rgba(0,0,0,0.05) !important;
     }
     .open-title {
-        background: linear-gradient(100deg,#5b21b6 0%,#4f46e5 45%,#0369a1 100%);
+        background: linear-gradient(100deg, #2563EB 0%, #3B82F6 45%, #0369a1 100%);
         -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-    .open-subtitle { color: #3d2f7e !important; }
-    .open-desc     { color: #5a4f80 !important; }
-    .open-chip { background: rgba(109,40,217,0.07) !important; border-color: rgba(109,40,217,0.18) !important; color: #3d2f7e !important; }
-    .open-creator { background: rgba(109,40,217,0.05) !important; color: #5a4f80 !important; }
-    .open-creator strong { color: #5b21b6 !important; }
-    .open-divider { background: linear-gradient(90deg,transparent,rgba(109,40,217,0.22),transparent) !important; }
-    .open-team-block { background: rgba(109,40,217,0.05) !important; border-color: rgba(109,40,217,0.15) !important; }
-    .open-team-label { color: #5a4f80 !important; }
-    .open-member { color: #3d2f7e !important; }
-    .member-id { color: #8b7db5 !important; }
-    .footer-team-credit { color: #3d2f7e !important; }
-    .footer-team-credit strong { color: #5b21b6 !important; }
-    .footer-members { color: #7060a0 !important; }
+    .open-subtitle { color: #334155 !important; }
+    .open-desc     { color: #64748B !important; }
+    .open-chip { background: rgba(37,99,235,0.06) !important; border-color: rgba(37,99,235,0.15) !important; color: #334155 !important; }
+    .open-creator { background: rgba(37,99,235,0.04) !important; color: #64748B !important; }
+    .open-creator strong { color: #2563EB !important; }
+    .open-divider { background: linear-gradient(90deg,transparent,rgba(37,99,235,0.18),transparent) !important; }
+    .open-team-block { background: rgba(37,99,235,0.04) !important; border-color: rgba(37,99,235,0.12) !important; }
+    .open-team-label { color: #64748B !important; }
+    .open-member { color: #334155 !important; }
+    .member-id { color: #94A3B8 !important; }
+    .footer-team-credit { color: #334155 !important; }
+    .footer-team-credit strong { color: #2563EB !important; }
+    .footer-members { color: #64748B !important; }
 
     /* Footer */
-    .footer-title { color: #3d2f7e !important; }
-    .footer-sub   { color: #7060a0 !important; }
-    .footer-badge { background: rgba(109,40,217,0.07) !important; color: #4a3f70 !important; }
+    .footer-title { color: #334155 !important; }
+    .footer-sub   { color: #94A3B8 !important; }
+    .footer-badge { background: rgba(37,99,235,0.06) !important; color: #64748B !important; border-color: rgba(37,99,235,0.12) !important; }
 
     /* Generic text */
-    p, li { color: #4a3f70 !important; }
-    h1, h2, h3, h4, h5 { color: #1a1535 !important; }
+    p, li { color: #334155 !important; }
+    h1, h2, h3, h4, h5 { color: #0F172A !important; }
 
     /* Native Streamlit input overrides */
     [data-testid="stNumberInput"] input {
-        background: rgba(255,255,255,0.92) !important;
-        color: #1a1535 !important;
-        border-color: rgba(109,40,217,0.25) !important;
+        background: rgba(255,255,255,0.95) !important;
+        color: #0F172A !important;
+        border-color: rgba(226,232,240,0.90) !important;
+    }
+
+    /* Main buttons in light mode */
+    .stButton > button[kind="primary"],
+    [data-testid="stMainBlockContainer"] .stButton > button {
+        background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 100%) !important;
+        box-shadow: 0 8px 28px rgba(37,99,235,0.30) !important;
+    }
+    [data-testid="stMainBlockContainer"] .stButton > button:hover {
+        background: linear-gradient(135deg, #1E40AF 0%, #1D4ED8 100%) !important;
+        box-shadow: 0 12px 36px rgba(37,99,235,0.40) !important;
+    }
+
+    /* Slider in light mode */
+    [data-baseweb="slider"] [data-testid="stThumb"] {
+        background: #2563EB !important;
+        border-color: #3B82F6 !important;
     }
 
     /* Section utilities */
-    .section-card { background: rgba(255,255,255,0.85) !important; border-color: rgba(109,40,217,0.1) !important; }
-    .chart-bg     { background: rgba(255,255,255,0.8)  !important; border-color: rgba(109,40,217,0.1) !important; }
+    .section-card { background: rgba(255,255,255,0.90) !important; border-color: rgba(226,232,240,0.80) !important; }
+    .chart-bg     { background: rgba(255,255,255,0.85)  !important; border-color: rgba(226,232,240,0.70) !important; }
     </style>
     """, unsafe_allow_html=True)
 
@@ -850,124 +867,192 @@ def performance_comment(score: float, has_final: bool, required: float = None):
         else:
             return ("❌", "Target Not Achievable", "Even a perfect final exam score cannot reach your target. Try lowering your goal.", "perf-danger")
 
-def make_bar_chart(components: dict, colors: list):
+# ── Design-system chart palette (dark / light keyed by bool) ─────────────────
+_CHART = {
+    True: {   # dark mode
+        "fig_bg":    "none",
+        "ax_bg":     "#1E293B",
+        "track":     "#293548",
+        "text_pri":  "#F1F5F9",
+        "text_sec":  "#94A3B8",
+        "text_mut":  "#64748B",
+        "grid":      "#334155",
+        "title":     "#CBD5E1",
+        "val_label": "#E2E8F0",
+        "bar_sep":   "#0F172A",
+        # component data colors — approved Slate/Royal Blue palette
+        "assign":    "#2563EB",   # Royal Blue  (Assignment)
+        "mid":       "#0284C7",   # Sky Blue    (Midterm)
+        "attend":    "#16A34A",   # Green       (Attendance)
+        "final":     "#3B82F6",   # Blue 500    (Final Exam)
+        # gauge semantic colors
+        "gauge_ok":  "#3B82F6",   # Blue  (achievable)
+        "gauge_warn":"#D97706",   # Amber (warning ≤85)
+        "gauge_bad": "#DC2626",   # Red   (impossible / >100)
+        "gauge_bg":  "#0F172A",   # deep background
+        "donut_sep": "#0F172A",
+        "center_pri":"#F1F5F9",
+        "center_sec":"#64748B",
+    },
+    False: {  # light mode
+        "fig_bg":    "none",
+        "ax_bg":     "#FFFFFF",
+        "track":     "#E2E8F0",
+        "text_pri":  "#0F172A",
+        "text_sec":  "#64748B",
+        "text_mut":  "#94A3B8",
+        "grid":      "#E2E8F0",
+        "title":     "#334155",
+        "val_label": "#1E293B",
+        "bar_sep":   "#FFFFFF",
+        # component data colors — approved Slate/Royal Blue palette
+        "assign":    "#2563EB",   # Royal Blue  (Assignment)
+        "mid":       "#0284C7",   # Sky Blue    (Midterm)
+        "attend":    "#16A34A",   # Green       (Attendance)
+        "final":     "#3B82F6",   # Blue 500    (Final Exam)
+        # gauge semantic colors
+        "gauge_ok":  "#3B82F6",   # Blue  (achievable)
+        "gauge_warn":"#D97706",   # Amber (warning ≤85)
+        "gauge_bad": "#DC2626",   # Red   (impossible / >100)
+        "gauge_bg":  "#FFFFFF",
+        "donut_sep": "#FFFFFF",
+        "center_pri":"#0F172A",
+        "center_sec":"#64748B",
+    },
+}
+
+def make_bar_chart(components: dict, colors: list, dark: bool = True):
+    p = _CHART[dark]
     labels = list(components.keys())
     values = list(components.values())
     max_val = max(max(values), 1)
     n = len(labels)
 
     fig, ax = plt.subplots(figsize=(8, max(2.8, n * 0.78)))
-    fig.patch.set_facecolor("#0b0a1a")
-    ax.set_facecolor("#0d0b1f")
+    fig.patch.set_facecolor(p["fig_bg"] if p["fig_bg"] != "none" else "none")
+    if p["fig_bg"] == "none":
+        fig.patch.set_alpha(0.0)
+    ax.set_facecolor(p["ax_bg"])
 
     y_pos = np.arange(n)
     bar_h = 0.48
 
     # Background track
     ax.barh(y_pos, [max_val * 1.15] * n, height=bar_h,
-            color="#1a1535", zorder=1, left=0)
+            color=p["track"], zorder=1, left=0)
 
-    # Gradient-style bars (simulate with solid + alpha overlay)
+    # Bars with value labels
     for i, (val, color) in enumerate(zip(values, colors)):
         ax.barh(y_pos[i], val, height=bar_h,
-                color=color, alpha=0.88, zorder=3, left=0,
+                color=color, alpha=0.90, zorder=3, left=0,
                 linewidth=0)
         # Highlight strip on top
         strip_bottom = y_pos[i] + bar_h * 0.37
         ax.barh(strip_bottom, val, height=bar_h * 0.25,
-                color="#ffffff", alpha=0.10, zorder=4)
+                color="#ffffff", alpha=0.08, zorder=4)
         # Value label
         ax.text(val + max_val * 0.02, y_pos[i],
                 f"{val:.1f} pts",
                 va="center", ha="left",
-                color="#e0d8ff", fontsize=9.5, fontweight="700",
+                color=p["val_label"], fontsize=9.5, fontweight="bold",
                 fontfamily="sans-serif")
 
     ax.set_yticks(y_pos)
-    ax.set_yticklabels(labels, color="#c4b5fd", fontsize=10, fontweight="600")
+    ax.set_yticklabels(labels, color=p["text_sec"], fontsize=10, fontweight="bold")
     ax.set_xlim(0, max_val * 1.35)
-    ax.set_xlabel("Weighted Contribution (points)", color="#5a4f80", fontsize=8.5, labelpad=8)
-    ax.tick_params(axis="x", colors="#4a3f70", labelsize=8)
+    ax.set_xlabel("Weighted Contribution (points)", color=p["text_mut"], fontsize=8.5, labelpad=8)
+    ax.tick_params(axis="x", colors=p["text_mut"], labelsize=8)
     ax.tick_params(axis="y", length=0)
     for spine in ax.spines.values():
         spine.set_visible(False)
-    ax.xaxis.grid(True, color="#1e1a38", linewidth=0.8, zorder=0)
+    ax.xaxis.grid(True, color=p["grid"], linewidth=0.6, alpha=0.5, zorder=0)
     ax.set_axisbelow(True)
 
     # Colour legend dots
     patches = [mpatches.Patch(color=c, label=l) for l, c in zip(labels, colors)]
     ax.legend(handles=patches, loc="lower right",
-              framealpha=0, labelcolor="#9d8ec4", fontsize=7.5,
+              framealpha=0, labelcolor=p["text_sec"], fontsize=7.5,
               handlelength=1, handleheight=0.8)
 
-    ax.set_title("Weighted Score Breakdown", color="#c4b5fd",
-                 fontsize=11, fontweight="700", pad=14, loc="left")
+    ax.set_title("Weighted Score Breakdown", color=p["title"],
+                 fontsize=11, fontweight="bold", pad=14, loc="left")
     plt.tight_layout(pad=1.2)
     return fig
 
-def make_donut(sizes, labels, colors):
+def make_donut(sizes, labels, colors, dark: bool = True):
+    p = _CHART[dark]
     fig, ax = plt.subplots(figsize=(4, 4))
-    fig.patch.set_facecolor("#0b0a1a")
-    ax.set_facecolor("#0b0a1a")
+    fig.patch.set_facecolor("none")
+    fig.patch.set_alpha(0.0)
+    ax.set_facecolor("none")
 
     wedges, texts, autotexts = ax.pie(
         sizes, labels=None, colors=colors,
         autopct="%1.0f%%", startangle=120,
         pctdistance=0.72,
-        wedgeprops={"edgecolor": "#0b0a1a", "linewidth": 3, "width": 0.55},
-        textprops={"color": "#c4b5fd", "fontsize": 8},
+        wedgeprops={"edgecolor": p["donut_sep"], "linewidth": 3, "width": 0.55},
+        textprops={"color": p["text_sec"], "fontsize": 8},
     )
     for at in autotexts:
-        at.set_color("#ffffff"); at.set_fontweight("700"); at.set_fontsize(8)
+        at.set_color("#ffffff"); at.set_fontweight("bold"); at.set_fontsize(8)
 
     # Centre label
     ax.text(0, 0, f"{sum(sizes):.1f}", ha="center", va="center",
-            fontsize=17, fontweight="800", color="#f0eeff")
+            fontsize=17, fontweight="bold", color=p["center_pri"])
     ax.text(0, -0.22, "pts total", ha="center", va="center",
-            fontsize=7.5, color="#7c6fa0")
+            fontsize=7.5, color=p["center_sec"])
 
     patches = [mpatches.Patch(color=c, label=l) for c, l in zip(colors, labels)]
     ax.legend(handles=patches, loc="lower center", bbox_to_anchor=(0.5, -0.14),
-              ncol=2, framealpha=0, labelcolor="#9d8ec4", fontsize=7.5,
+              ncol=2, framealpha=0, labelcolor=p["text_sec"], fontsize=7.5,
               handlelength=1)
 
-    ax.set_title("Score Composition", color="#c4b5fd",
-                 fontsize=11, fontweight="700", pad=10)
+    ax.set_title("Score Composition", color=p["title"],
+                 fontsize=11, fontweight="bold", pad=10)
     plt.tight_layout(pad=0.8)
     return fig
 
-def make_gauge(required_final):
+def make_gauge(required_final, dark: bool = True):
+    p = _CHART[dark]
     clamped = max(0, min(100, required_final))
-    danger  = required_final > 85
+    # Semantic color: green ≤60, amber ≤85, red >85
+    if required_final < 0:
+        bar_color = p["gauge_ok"]
+    elif required_final <= 60:
+        bar_color = p["gauge_ok"]
+    elif required_final <= 85:
+        bar_color = p["gauge_warn"]
+    else:
+        bar_color = p["gauge_bad"]
 
     fig, ax = plt.subplots(figsize=(5, 2.2))
-    fig.patch.set_facecolor("#0b0a1a")
-    ax.set_facecolor("#0d0b1f")
+    fig.patch.set_facecolor("none")
+    fig.patch.set_alpha(0.0)
+    ax.set_facecolor(p["ax_bg"])
 
     # Background track
-    ax.barh([0], [100], height=0.55, color="#1a1535", zorder=1)
+    ax.barh([0], [100], height=0.55, color=p["track"], zorder=1)
     # Filled bar
-    bar_color = "#f87171" if danger else "#818cf8"
-    ax.barh([0], [clamped], height=0.55, color=bar_color, alpha=0.9, zorder=3)
+    ax.barh([0], [clamped], height=0.55, color=bar_color, alpha=0.92, zorder=3)
     # Bright edge cap
     if clamped > 2:
         ax.barh([0], [min(clamped, 3)], height=0.55,
-                color="#ffffff", alpha=0.2, zorder=4, left=max(0, clamped - 3))
+                color="#ffffff", alpha=0.15, zorder=4, left=max(0, clamped - 3))
 
     label_text = f"{required_final:.1f} / 100" if required_final <= 100 else "Impossible (> 100)"
     ax.text(50, 0, label_text,
             ha="center", va="center",
-            color="#ffffff", fontsize=11, fontweight="800", zorder=5)
+            color=p["text_pri"], fontsize=11, fontweight="bold", zorder=5)
 
     ax.set_xlim(0, 100)
     ax.set_ylim(-0.7, 0.7)
     ax.set_yticks([])
     ax.set_xticks([0, 25, 50, 75, 100])
-    ax.tick_params(axis="x", colors="#4a3f70", labelsize=7.5)
+    ax.tick_params(axis="x", colors=p["text_mut"], labelsize=7.5)
     for spine in ax.spines.values(): spine.set_visible(False)
-    ax.set_xlabel("Score needed out of 100", color="#4a3f70", fontsize=8, labelpad=6)
-    ax.set_title("Final Exam Score Required", color="#c4b5fd",
-                 fontsize=11, fontweight="700", pad=12, loc="left")
+    ax.set_xlabel("Score needed out of 100", color=p["text_mut"], fontsize=8, labelpad=6)
+    ax.set_title("Final Exam Score Required", color=p["title"],
+                 fontsize=11, fontweight="bold", pad=12, loc="left")
     plt.tight_layout(pad=1.0)
     return fig
 
@@ -1095,11 +1180,11 @@ with st.sidebar:
     st.markdown(f"""
     <div style='padding:20px 4px 10px; text-align:center;'>
         <div style='font-size:3.2rem; line-height:1; margin-bottom:10px;'>🎓</div>
-        <div style='font-size:0.95rem; font-weight:800; color:#c4b5fd;
+        <div style='font-size:0.95rem; font-weight:800; color:#94A3B8;
                     letter-spacing:0.02em; line-height:1.35;'>
             Smart GPA Calculator
         </div>
-        <div style='font-size:0.7rem; color:#5a4f80; margin-top:4px; letter-spacing:0.05em;'>
+        <div style='font-size:0.7rem; color:#475569; margin-top:4px; letter-spacing:0.05em;'>
             and Prediction System
         </div>
     </div>
@@ -1127,11 +1212,11 @@ with st.sidebar:
             _load_demo_case_2()
             st.rerun()
     st.markdown("""
-    <div style='font-size:0.7rem; color:#5a4f80; line-height:1.6;
+    <div style='font-size:0.7rem; color:#475569; line-height:1.6;
                 padding:6px 10px; margin:6px 0 2px;
-                background:rgba(139,92,246,0.06); border-radius:8px;
-                border-left:2px solid rgba(139,92,246,0.3);'>
-        <b style='color:#9d8ec4;'>Demo:</b> Assignment&nbsp;85, Midterm&nbsp;75,
+                background:rgba(59,130,246,0.06); border-radius:8px;
+                border-left:2px solid rgba(59,130,246,0.25);'>
+        <b style='color:#64748B;'>Demo:</b> Assignment&nbsp;85, Midterm&nbsp;75,
         1&nbsp;missed&nbsp;out&nbsp;of&nbsp;16, Target&nbsp;80, Weights&nbsp;10/30/40/20
     </div>""", unsafe_allow_html=True)
     st.markdown("<div class='sb-divider'></div>", unsafe_allow_html=True)
@@ -1156,7 +1241,7 @@ with st.sidebar:
     </div>""", unsafe_allow_html=True)
 
     # ── Attendance Tracking (auto-calculated) ──
-    st.markdown("""<div style='font-size:0.74rem; color:#6d5d9e; margin:8px 0 10px 2px; line-height:1.55;'>
+    st.markdown("""<div style='font-size:0.74rem; color:#64748B; margin:8px 0 10px 2px; line-height:1.55;'>
         📌 Attendance score is calculated automatically from total classes and missed classes.
     </div>""", unsafe_allow_html=True)
 
@@ -1213,10 +1298,10 @@ with st.sidebar:
         final_score = st.slider("Final Exam Score", 0, 100, 80, 1,
                                  key="final_score",
                                  help="Your final exam score (0–100)")
-        st.markdown(f"""<div class='score-pill' style='border-color:rgba(244,114,182,0.35);
-                         background:rgba(244,114,182,0.08);'>
+        st.markdown(f"""<div class='score-pill' style='border-color:rgba(59,130,246,0.35);
+                         background:rgba(59,130,246,0.08);'>
             <span>📝 Final Exam <small style='opacity:.6;'>(40%)</small></span>
-            <span class='pill-val' style='color:#f472b6;'>{final_score}</span>
+            <span class='pill-val' style='color:#60A5FA;'>{final_score}</span>
         </div>""", unsafe_allow_html=True)
     else:
         st.markdown("<div class='sb-divider'></div>", unsafe_allow_html=True)
@@ -1224,17 +1309,17 @@ with st.sidebar:
         target_score = st.slider("Target Overall Score", 0, 100, 80, 1,
                                   key="target_score",
                                   help="The overall score you want to achieve (0–100)")
-        st.markdown(f"""<div class='score-pill' style='border-color:rgba(99,102,241,0.35);
-                         background:rgba(99,102,241,0.08);'>
+        st.markdown(f"""<div class='score-pill' style='border-color:rgba(59,130,246,0.35);
+                         background:rgba(59,130,246,0.08);'>
             <span>🎯 Target Score</span>
-            <span class='pill-val' style='color:#818cf8;'>{target_score}</span>
+            <span class='pill-val' style='color:#60A5FA;'>{target_score}</span>
         </div>""", unsafe_allow_html=True)
 
     st.markdown("<div class='sb-divider'></div>", unsafe_allow_html=True)
 
     # ── Grading Weight Settings ──
     st.markdown("<div class='sb-label'>⚖️ Grading Weight Settings</div>", unsafe_allow_html=True)
-    st.markdown("""<div style='font-size:0.74rem; color:#6d5d9e; margin:0 0 10px 2px; line-height:1.55;'>
+    st.markdown("""<div style='font-size:0.74rem; color:#64748B; margin:0 0 10px 2px; line-height:1.55;'>
         Adjust the weight of each component. Total must equal 100%.
     </div>""", unsafe_allow_html=True)
 
@@ -1321,23 +1406,23 @@ else:
 
 # ── Hero ─────────────────────────────────────────────────────────────────────
 mode_badge = (
-    '<span style="background:rgba(244,114,182,0.15);border:1px solid rgba(244,114,182,0.3);'
-    'color:#f472b6;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;'
+    '<span style="background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);'
+    'color:#60A5FA;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;'
     'padding:3px 12px;border-radius:20px;">✓ FINAL SCORE MODE</span>'
     if has_final else
-    '<span style="background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.3);'
-    'color:#818cf8;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;'
+    '<span style="background:rgba(59,130,246,0.10);border:1px solid rgba(59,130,246,0.22);'
+    'color:#60A5FA;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;'
     'padding:3px 12px;border-radius:20px;">🔮 PREDICTION MODE</span>'
 )
 st.markdown(f"""
 <div style='padding:36px 0 28px; text-align:center;'>
     <div style='margin-bottom:14px;'>{mode_badge}</div>
     <h1 style='font-size:2.1rem; font-weight:900; margin:0; line-height:1.2;
-               background:linear-gradient(100deg,#c4b5fd 0%,#818cf8 40%,#67e8f9 100%);
+               background:linear-gradient(100deg,#60A5FA 0%,#3B82F6 40%,#67e8f9 100%);
                -webkit-background-clip:text; -webkit-text-fill-color:transparent;'>
         Smart GPA Calculator and Prediction System
     </h1>
-    <p style='color:#4a3f70; font-size:0.88rem; margin-top:10px; letter-spacing:0.04em;'>
+    <p style='color:#475569; font-size:0.88rem; margin-top:10px; letter-spacing:0.04em;'>
         University academic dashboard &nbsp;·&nbsp; Weighted scores &nbsp;·&nbsp; Grade &amp; GPA
     </p>
 </div>
@@ -1349,9 +1434,9 @@ card_accent_css = """
 <style>
 /* Card 1 – purple */
 div[data-testid="column"]:nth-child(1) div[data-testid="metric-container"] {
-    border-top: 3px solid #a78bfa;
+    border-top: 3px solid #3B82F6;
 }
-/* Card 2 – blue / pink */
+/* Card 2 – sky blue */
 div[data-testid="column"]:nth-child(2) div[data-testid="metric-container"] {
     border-top: 3px solid #60a5fa;
 }
@@ -1530,25 +1615,44 @@ chart_col, viz_col = st.columns([3, 2], gap="large")
 with chart_col:
     st.markdown("<div class='sec-hdr'><span>📊</span> Weighted Score Chart</div>",
                 unsafe_allow_html=True)
-    if has_final:
-        components = {"Assignments": assignment_contrib, "Midterm Exam": midterm_contrib,
-                      "Attendance": attendance_contrib, "Final Exam": final_contrib}
-        bar_colors = ["#a78bfa", "#60a5fa", "#34d399", "#f472b6"]
+    if not weights_valid:
+        st.markdown("""<div class='perf-box perf-warn' style='padding:14px 16px;'>
+            <div class='perf-icon' style='font-size:1.4rem;'>⚖️</div>
+            <div class='perf-content'>
+                <div class='perf-body'>Charts will appear when grading weights total <b>100%</b>.</div>
+            </div></div>""", unsafe_allow_html=True)
     else:
-        components = {"Assignments": assignment_contrib, "Midterm Exam": midterm_contrib,
-                      "Attendance": attendance_contrib}
-        bar_colors = ["#a78bfa", "#60a5fa", "#34d399"]
-    st.pyplot(make_bar_chart(components, bar_colors))
+        if has_final:
+            components = {"Assignments": assignment_contrib, "Midterm Exam": midterm_contrib,
+                          "Attendance": attendance_contrib, "Final Exam": final_contrib}
+            bar_colors = [_CHART[_dark]["assign"], _CHART[_dark]["mid"],
+                          _CHART[_dark]["attend"], _CHART[_dark]["final"]]
+        else:
+            components = {"Assignments": assignment_contrib, "Midterm Exam": midterm_contrib,
+                          "Attendance": attendance_contrib}
+            bar_colors = [_CHART[_dark]["assign"], _CHART[_dark]["mid"],
+                          _CHART[_dark]["attend"]]
+        _fig = make_bar_chart(components, bar_colors, dark=_dark)
+        st.pyplot(_fig, clear_figure=True)
 
 with viz_col:
     st.markdown("<div class='sec-hdr'><span>🔬</span> Score Analysis</div>",
                 unsafe_allow_html=True)
     if has_final:
-        sizes  = [assignment_contrib, midterm_contrib, attendance_contrib, final_contrib]
-        labels = [f"Assignment ({w_assignment}%)", f"Midterm ({w_midterm}%)",
-                  f"Attendance ({w_attendance}%)", f"Final ({w_final}%)"]
-        colors = ["#a78bfa", "#60a5fa", "#34d399", "#f472b6"]
-        st.pyplot(make_donut(sizes, labels, colors))
+        if not weights_valid:
+            st.markdown("""<div class='perf-box perf-warn' style='padding:14px 16px;'>
+                <div class='perf-icon' style='font-size:1.4rem;'>⚖️</div>
+                <div class='perf-content'>
+                    <div class='perf-body'>Charts will appear when grading weights total <b>100%</b>.</div>
+                </div></div>""", unsafe_allow_html=True)
+        else:
+            sizes  = [assignment_contrib, midterm_contrib, attendance_contrib, final_contrib]
+            labels = [f"Assignment ({w_assignment}%)", f"Midterm ({w_midterm}%)",
+                      f"Attendance ({w_attendance}%)", f"Final ({w_final}%)"]
+            colors = [_CHART[_dark]["assign"], _CHART[_dark]["mid"],
+                      _CHART[_dark]["attend"], _CHART[_dark]["final"]]
+            _fig = make_donut(sizes, labels, colors, dark=_dark)
+            st.pyplot(_fig, clear_figure=True)
     else:
         if not weights_valid:
             st.markdown("""<div class='perf-box perf-warn' style='padding:14px 16px;'>
@@ -1569,7 +1673,8 @@ with viz_col:
                     <div class='perf-body'>Required final exam score <b>cannot be calculated</b> — Final Exam Weight is 0%.</div>
                 </div></div>""", unsafe_allow_html=True)
         else:
-            st.pyplot(make_gauge(required_final))
+            _fig = make_gauge(required_final, dark=_dark)
+            st.pyplot(_fig, clear_figure=True)
 
             if required_final < 0:
                 st.markdown("""<div class='perf-box perf-success' style='padding:14px 16px; margin-top:10px;'>
